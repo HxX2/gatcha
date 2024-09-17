@@ -1,0 +1,31 @@
+root = "."
+
+tmp_dir = "tmp"
+
+[build]
+cmd = "go build -o ./tmp/gatcha ./cmd/server/main.go"
+
+bin = "tmp/gatcha"
+
+full_bin = "APP_ENV=dev APP_USER=hxx ./tmp/gatcha"
+
+include_ext = ["go", "env", "yaml"]
+
+exclude_dir = ["tmp"]
+
+exclude_regex = ["_test.go"]
+
+exclude_file = []
+exclude_unchanged = true
+log = "air.log"
+args_bin = []
+stop_on_error = true
+send_interrupt = false
+delay = 1000
+kill_delay = 500
+
+[log]
+time = false
+
+[misc]
+clean_on_exit = true
